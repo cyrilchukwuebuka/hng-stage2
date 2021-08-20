@@ -1,35 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
-*{
+body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    text-decoration: non e;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .navbar{
-    position: fixed;
-    display: inline-block;
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
+    /* font-size: 4rem; */
+    display: flex;
+    justify-content: space-around;
     z-index: 999;
-    width:100%;
-    padding: 15px 0 ;
-    padding-left: 5px;
     background-color: rgb(109, 108, 108);
     font-family: 'Ubuntu', sans-serif;
-    overflow: hidden
 }
 
-.max-width{
-    max-width: 100%;
-    padding: 0 30px;
+/* .max-width{
+    width: 100%;
     margin: auto;
-}
-
-.navbar .max-width{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    justify-content: space-around;
+    flex-direction: column;
+} */
+
+
 
 .navbar .logo a{
     color: #fff;
@@ -42,48 +40,21 @@
     color: #f00;
 }
 
-/* .navbar .menu li {
-    list-style: none;
-    display: inline-block;
-    
-}
-.navbar .menu li a{
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 15px;
-    text-decoration: none; 
-    transition: color 0.3s ease;
-}
-
-.navbar .menu li a:hover{
-    color: #f00;
-}
-
-.menu-btn {
-    color: #fff;
-    font-size: 23px;
-    cursor: pointer;
-    display: none
-} */
-
 
 /* Home section styling */
 .home{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     padding-left: 30px;
-    /* justify-content: center; */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/sean-lim-kdHOdg1Bi3U-unsplash.jpg) no-repeat center fixed;
     height: 100vh;
+    width: 100%;
     background-size: cover;
-    min-height: 500px;
     font-family: 'Ubuntu', sans-serif;
 }
 
-.home .max-width{
-    margin-left: 0px;
-}
+
 
 .home .home-content .text-1{
     font-size: 27px;
@@ -91,10 +62,11 @@
 }
 
 .home .home-content .text-2{
+    flex-wrap: wrap;
     font-size: 55px;
     color: #f00;
     font-weight: 600;
-    margin-left: -3px;
+    margin-left: 3px;
 }
 
 .home .home-content .text-3{
@@ -160,13 +132,14 @@ section{
 
 .about .about-content .left{
     width: auto;
+    height: auto;
 }
 
 .about .about-content .left img {
     height: 400px;
     width: 600px;
     margin: 0 auto;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 6px;
 }
 
@@ -174,13 +147,15 @@ section{
     width: auto;
     align-items: center;
     margin: auto 20%;
+    justify-items: center;
+    justify-content: center;
 }
 
 .about .about-content .right .text{
     font-size: 30px;
     font-weight: 600;
-    margin-bottom: 20px;
-    align-items: center;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .about .about-content .right .text span{
@@ -188,17 +163,24 @@ section{
 }
 
 .about .about-content .right p{
-    text-align: center;
+    text-align: justify;
 }
+
+.about .about-content .right .download{
+    display: flex;
+}
+
 
 .about .about-content .right a{
     display: inline-block;
     background: #f00;
     color: #fff;
+    align-content: center;
     font-size: 25px;
     font-weight: 500;
     padding: 12px 36px;
     margin-top: 20px;
+    margin: auto;
     border-radius: 6px;
     border: 2px solid #f00;
     transition: all 0.3s ease;
@@ -295,21 +277,63 @@ section{
 
 
 
-@media screen and (max-device-width: 768px) {
-    max-width{
-        padding: 0 10px
-    } 
-
-    .menu-btn{
-        display: block;
-        z-index: 999;
+@media only screen and (max-width: 808px) {
+    .navbar{
+        width: 100%;
+        height: auto;
+        padding: auto 0;
     }
 
-    .menu-btn i.active::before{
-        content: '';
+    .home{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-left: 10px;
+        /* justify-content: center; */
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/sean-lim-kdHOdg1Bi3U-unsplash.jpg) no-repeat center fixed;
+        height: 50vh;
+        width: 100%;
+        background-size: cover;
+        font-family: 'Ubuntu', sans-serif;
     }
+
+
+    .home .home-content .text-1{
+        font-size: 22px;
+        color: #fff;
+    }
+
+    .home .home-content .text-2{
+        flex-wrap: wrap;
+        font-size: 45px;
+        color: #f00;
+        font-weight: 450;
+        margin-left: 2px;
+    }
+
+    .home .home-content .text-3{
+        color: #fff;
+        font-size: 22px;
+        margin: 3px 0;
+    }
+
     
-    .navbar .menu{
+
+    .about .about-content .left img {
+        height: 250px;
+        width: 450px;
+        margin: 0 auto;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+
+    .about .about-content .right .text{
+        font-size: 25px;
+        font-weight: 600;
+        margin: 20px auto;
+        text-align: center;
+    }
+    /* .navbar .menu{
         position: fixed;
         height: 100vh;
         width: 100%;
@@ -319,23 +343,10 @@ section{
         text-align: center;
         padding-top: 80px;
         transition: all 0.3s ease;
-    }
+    } */
 
-    .navbar .menu.active{
-        left: 0;
-    }
 
-    .navbar .menu li {
-        display: block;
-    }
-
-    .navbar .menu li a {
-        display: inline-block;
-        margin: 25px ;
-        font-size: 20px;
-
-    }
-
+/* 
     .home .home-content .text-2{
         font-size: 70px;
     }
@@ -365,50 +376,7 @@ section{
 
     .about .about-content .right {
         flex: 100%;
-    }
+    } */
     
 }
 
-/* 
-@media screen and (max-device-width: 690px){
-    .max-width{
-        padding: 0 25px;
-    }
-
-    .home .home-content .text-2{
-        font-size: 60px;
-        color: #f00;
-        font-weight: 600;
-        margin-left: -3px;
-    }
-
-    .home .home-content .text-3{
-        color: #fff;
-        font-size: 22px;
-        margin: 5px 0;
-    }
-
-    .home .home-content a{
-        font-size: 17px;
-        padding: 9px 25px;
-    }
-} */
-
-/* @media screen and (max-device-width: 500px){
-    .max-width{
-        padding: 0 25px;
-    }
-
-    .home .home-content .text-2{
-        font-size: 50px;
-        color: #f00;
-        font-weight: 600;
-        margin-left: -3px;
-    }
-
-    .home .home-content .text-3{
-        color: #fff;
-        font-size: 19px;
-        margin: 5px 0;
-    }
-} */
